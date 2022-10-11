@@ -1,0 +1,98 @@
+<form #contactForm="ngForm" (ngSubmit)="contact(contactForm)">
+    <div class="container-md mb-4">
+        <label for="exampleFormControlInput1" class="form-label">お名前</label><br>
+
+        <div class="row">
+            <div class="col-4">
+                <input ngModel name="lastName" class="form-control" type="text" id="exampleFormControlInput1" placeholder="性">
+            </div>
+            <div class="col-4">
+                <input ngModel name="firstName" class="form-control" type="text" id="exampleFormControlInput1" placeholder="名">
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-5 container-md">
+        <label for="exampleFormControlInput1" class="form-label">フリガナ</label><br>
+
+        <div class="row">
+            <div class="col-4">
+                <input ngModel name="lastNamePseudonym" class="form-control" type="text" id="exampleFormControlInput1" placeholder="性">
+            </div>
+            <div class="col-4">
+                <input ngModel name="firstNamePseudonym" class="form-control" type="text" id="exampleFormControlInput1" placeholder="名">
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-5 container-md">
+        <label for="exampleFormControlInput1" class="form-label">ご住所</label><br>
+        <label for="exampleFormControlInput1" class="form-label">郵便番号</label>
+        <div class="row">
+            <div class="col-2">
+                <input ngModel type="text" name="postCode" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');"><br>
+            </div>
+        </div><br>
+        <label for="exampleFormControlInput1" class="form-label">都道府県、市区町村、番地</label><br>
+        <input ngModel type="text"  class="form-control" name="address">
+    </div>
+
+    <div class="mb-5 container-md">
+        <label for="exampleFormControlInput1" class="form-label">建物名、お部屋番号</label><br>
+        <input ngModel name="buildingName" type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+
+    <div class="mb-5 container-md">
+        <label for="exampleFormControlInput1" class="form-label">電話番号(ハイフンなし)</label>
+        <label for="exampleFormControlInput1" class="form-label">　※例(00011112222)</label><br>
+        <div class="row">
+            <div class="col-3">
+                <input ngModel name="phoneNumber" type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="col-2">
+                <label>
+                    <input ngModel type="radio" name="phoneType" value="固定電話">
+                    固定電話
+                </label>
+            </div>
+            <div class="col-2">
+                <label>
+                    <input ngModel type="radio" name="phoneType" value="携帯電話">
+                    携帯電話
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="container-md">
+        <label for="exampleFormControlInput1" class="form-label">メールアドレス</label>
+    </div>
+    <div class="input-group mb-5 container-md">
+        <input ngModel name="emailFirst" type="text" class="form-control" aria-label="Username">
+        <span class="input-group-text">@</span>
+        <input ngModel name="emailLast" type="text" class="form-control" aria-label="Server">
+    </div>
+
+    <div class="mb-5 container-md">
+        <label for="exampleFormControlInput1" class="form-label">ご希望の連絡方法</label><br>
+        <div class="row">
+            <div class="col-2">
+                <label>
+                    <input ngModel type="radio" name="desiredContact" value="電話">
+                    電話　
+                </label>
+            </div>
+            <div class="col-2">
+                <label>
+                    <input ngModel type="radio" name="desiredContact" value="メール">
+                    メール
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3 container-md">
+        <label for="exampleFormControlTextarea1" class="form-label">お問い合わせの内容</label><br>
+        <textarea ngModel name="contactForm" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">送信する</button>
+</form>
