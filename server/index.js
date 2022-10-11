@@ -4,6 +4,7 @@ const config = require('./config');
 const FakeDb = require('./fakeDb');
 const contactRoutes = require('./routes/contact')
 const bodyParser = require('body-parser')
+const path = require('path')
 
 mongoose.connect(config.DB_URI).then(
     () => {
@@ -25,7 +26,6 @@ if(process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(appPath, 'index.html'))
 })
 }
-
 const PORT = process.env.PORT  || '3001'
 
 app.listen(PORT, function() {
