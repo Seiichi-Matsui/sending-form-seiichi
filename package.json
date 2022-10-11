@@ -23,6 +23,7 @@
     "body-parser": "^1.20.0",
     "bootstrap": "^5.2.1",
     "express": "^4.18.1",
+    "heroku-cli": "^6.16.18",
     "mongoose": "^6.6.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
