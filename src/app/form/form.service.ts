@@ -59,6 +59,7 @@ export class FormDateService implements OnInit{
             "manager": "未設定",
             "contactForm": contactForm,
             "date": time,
+            "opened": false
         }
         
         return this.http.post('/api/v1/contacts/add', contact)

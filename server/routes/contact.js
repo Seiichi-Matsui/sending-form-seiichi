@@ -9,7 +9,7 @@ router.get('', function(req, res) {
 })
 
 router.post('/add', function(req, res) {
-    const { lastName, firstName, lastNamePseudonym, firstNamePseudonym, postCode, address, buildingName, phoneNumber, phoneType, emailFirst, emailLast, desiredContact, status, priority, manager, contactForm, date } = req.body
+    const { lastName, firstName, lastNamePseudonym, firstNamePseudonym, postCode, address, buildingName, phoneNumber, phoneType, emailFirst, emailLast, desiredContact, status, priority, manager, contactForm, date, opened } = req.body
 
     if(!lastName) {
         return res.status(422).send({errors: [{title: 'User error', detail: "お名前を入力してください。"}]})
@@ -59,7 +59,7 @@ router.post('/add', function(req, res) {
         return res.status(422).send({errors: [{title: 'User error', detail: "お問合せ内容を入力してください。"}]})
     }
 
-    const contact = new Contact({lastName, firstName, lastNamePseudonym, firstNamePseudonym, postCode, address, buildingName, phoneNumber, phoneType, emailFirst, emailLast, desiredContact, status, priority, manager, contactForm, date })
+    const contact = new Contact({lastName, firstName, lastNamePseudonym, firstNamePseudonym, postCode, address, buildingName, phoneNumber, phoneType, emailFirst, emailLast, desiredContact, status, priority, manager, contactForm, date, opened })
         contact.save(function(err) {
             if(err) {
                 return res.status(422).send({errors: [{title: 'User error', detail: "エラーが発生しました。お手数ですが再度ご入力をお願いします。"}]})

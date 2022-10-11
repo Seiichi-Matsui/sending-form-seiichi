@@ -8,8 +8,8 @@ const path = require('path')
 
 mongoose.connect(config.DB_URI).then(
     () => {
-        const fakeDb = new FakeDb()
-        fakeDb.initDb()
+        // const fakeDb = new FakeDb()
+        // fakeDb.initDb()
     } 
 )
 
