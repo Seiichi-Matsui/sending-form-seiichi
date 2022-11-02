@@ -11,6 +11,7 @@ import { FormDateService } from './form.service';
 
 @Injectable()
 export class FormComponent implements OnInit {
+  errors:any = []
 
   constructor(
     private formDateService: FormDateService
@@ -39,11 +40,12 @@ export class FormComponent implements OnInit {
 
 
       (result) => {
-        console.log('完了！');
+        alert('送信が完了しました')
         
       },
       (err: HttpErrorResponse) => {
-        console.error(err)
+        alert('エラーが発生しました')
+        this.errors = err.error.errors
       }
     )
   }
